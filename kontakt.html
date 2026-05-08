@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Siberian Wellness</title>
+    </head>
+     <body>
+        <header>
+    <img src="slike/logo.png" class="logo" alt="Logo" width="100">
+    <nav class="meni">
+        <a href="index.html">Naslovna</a>
+        <a href="o_nama.html">O nama</a>
+        <a href="tabele.html">Cene</a>
+        <a href="proizvodi.html">Proizvodi</a>
+        <a href="kontakt.html">Kontakt</a>
+    </nav>
+</header      
+
+<div>
+<form id="forma">
+    Ime:<br>
+    <input type="text" id="ime" name="ime" placeholder="Vaše ime i prezime"><br><br>
+
+    Ulica i broj:<br>
+    <input type="text" id="adresa" name="Ulica i broj" placeholder="Vaša adresa i broj kuće"><br><br>
+
+    Mesto:<br>
+    <input  type="text" id="mesto" name="Mesto" placeholder="Mesto"><br><br>
+
+    Poštanski broj:<br>
+    <input  type="number" id="postanski" name="Poštanski broj" placeholder="Poštanski broj"><br><br>
+
+    Broj mobilnog:<br>
+    <input type="number" id="telefon" name="Broj telefona" placeholder="Vaš broj telefona"><br><br>
+
+    Proizvodi:<br>
+    <textarea name="poruka" id="poruka" rows="5" cols="30" placeholder="Vaši proizvodi"></textarea><br><br>
+
+    <input type="submit" class="poruci" value="Poruči">
+    <input type="reset" class="otkazi" value="Otkaži">
+</form>
+ <ul id="listaPorudzbina"></ul>
+<p id="status"></p>
+     <h2>TELEFON</h2>
+     <p>+381 63 761-1-607</p>
+     <h2>EMAIL</h2>
+     <p >siberianwellnes@gmail.com</p>
+     <h2>ADRESA</h2>
+     <p>Miroslava Antića 15, Rumenka, 21201, Srbija</p>
+</div>
+<script src="script.js"></script>
+</html>
