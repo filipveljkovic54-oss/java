@@ -1,4 +1,4 @@
-let porudzbine = [];
+var porudzbine = [];
 
 function napraviPorudzbinu(ime, mesto, proizvod) {
     return {
@@ -12,15 +12,15 @@ function brojPorudzbina() {
     return porudzbine.length;
 }
 
-let forma = document.getElementById("forma");
+var forma = document.getElementById("forma");
 
 if (forma) {
     forma.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        let ime = document.getElementById("ime").value.trim();
-        let mesto = document.getElementById("mesto").value.trim();
-        let proizvod = document.getElementById("poruka").value.trim();
+        var ime = document.getElementById("ime").value.trim();
+        var mesto = document.getElementById("mesto").value.trim();
+        var proizvod = document.getElementById("poruka").value.trim();
 
         if (ime === "" || mesto === "" || proizvod === "") {
             alert("Popuni obavezna polja!");
@@ -29,7 +29,7 @@ if (forma) {
 
         ime = ime.toUpperCase();
 
-        let nova = napraviPorudzbinu(ime, mesto, proizvod);
+        var nova = napraviPorudzbinu(ime, mesto, proizvod);
         porudzbine.push(nova);
 
         prikaziPorudzbine();
@@ -37,43 +37,49 @@ if (forma) {
 }
 
 function prikaziPorudzbine() {
-    let lista = document.getElementById("listaPorudzbina");
+    var lista = document.getElementById("listaPorudzbina");
 
-    if (!lista) return;
+    if (!lista) {
+        return;
+    }
 
     lista.innerHTML = "";
 
-    for (let i = 0; i < porudzbine.length; i++) {
-        let li = document.createElement("li");
+    for (var i = 0; i < porudzbine.length; i++) {
+        var li = document.createElement("li");
 
         li.innerHTML = porudzbine[i].ime + " (" + porudzbine[i].mesto + ") - " + porudzbine[i].proizvod;
 
         li.addEventListener("click", function() {
-            li.style.color = "green";
-            li.style.fontWeight = "bold";
+            this.style.color = "green";
+            this.style.fontWeight = "bold";
         });
 
         lista.appendChild(li);
     }
 
-    let status = document.getElementById("status");
-    let broj = brojPorudzbina();
+    var status = document.getElementById("status");
+    var broj = brojPorudzbina();
 
-    switch(true) {
-        case (broj === 0):
-            status.innerHTML = "Nema porudžbina";
-            break;
-        case (broj < 3):
-            status.innerHTML = "Imate nekoliko porudžbina";
-            break;
-        default:
-            status.innerHTML = "Veliki broj porudžbina!";
+    if (status) {
+        switch (true) {
+            case (broj === 0):
+                status.innerHTML = "Nema porudžbina";
+                break;
+
+            case (broj < 3):
+                status.innerHTML = "Imate nekoliko porudžbina";
+                break;
+
+            default:
+                status.innerHTML = "Veliki broj porudžbina!";
+        }
     }
 }
 
-let slike = document.querySelectorAll("img");
+var slike = document.querySelectorAll("img");
 
-let brojacKlikova = 0;
+var brojacKlikova = 0;
 
 slike.forEach(function(slika) {
     slika.addEventListener("click", function() {
@@ -81,7 +87,8 @@ slike.forEach(function(slika) {
 
         slika.style.border = "3px solid red";
 
-        let p = document.getElementById("klikovi");
+        var p = document.getElementById("klikovi");
+
         if (p) {
             p.innerHTML = "Kliknuto na slike: " + brojacKlikova;
         }
