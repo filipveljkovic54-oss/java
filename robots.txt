@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://filipveljkovic9.wasmer.app/sitemap.xml
+Sitemap: https://https://veljkovic05.github.io/java/sitemap.xml
