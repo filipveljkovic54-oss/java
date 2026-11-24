@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://https://veljkovic05.github.io/java/sitemap.xml
+Sitemap: https://veljkovic05.github.io/java/sitemap.xml
